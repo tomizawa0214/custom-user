@@ -1,8 +1,12 @@
 from django.views import View
 from accounts.models import CustomUser
-from accounts.forms import ProfileForm
+from accounts.forms import ProfileForm, SignupUserForm
 from django.shortcuts import render, redirect
 from allauth.account import views
+
+class SignupView(views.SignupView):
+  template_name = 'accounts/signup.html'
+  form_class = SignupUserForm
 
 class LogoutView(views.LogoutView):
   template_name = 'accounts/logout.html'
