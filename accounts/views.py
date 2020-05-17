@@ -2,6 +2,10 @@ from django.views import View
 from accounts.models import CustomUser
 from accounts.forms import ProfileForm
 from django.shortcuts import render, redirect
+from allauth.account import views
+
+class LoginView(views.LoginView):
+  template_name = 'accounts/login.html'
 
 class ProfileEditView(View):
   def get(self, request, *args, **kwargs):
