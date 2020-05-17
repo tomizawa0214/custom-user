@@ -44,3 +44,16 @@ body {
 .profile_table .data {
   padding: 16px 24px;
 }
+
+.form_wrap {
+  display: grid;
+  gap: 16px;
+}
+
+.form_wrap-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
