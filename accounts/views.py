@@ -1,4 +1,5 @@
 from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts.models import CustomUser
 from accounts.forms import ProfileForm, SignupUserForm
 from django.shortcuts import render, redirect
@@ -19,7 +20,7 @@ class LogoutView(views.LogoutView):
 class LoginView(views.LoginView):
   template_name = 'accounts/login.html'
 
-class ProfileEditView(View):
+class ProfileEditView(LoginRequiredMixin, View):
   def get(self, request, *args, **kwargs):
     user_data = CustomUser.objects.get(id=request.user.id)
     form = ProfileForm(
@@ -49,7 +50,7 @@ class ProfileEditView(View):
       'form': form
     })
 
-class ProfileView(View):
+class ProfileView(LoginRequiredMixin, View):
   def get(self, request, *args, **kwargs):
     user_data = CustomUser.objects.get(id=request.user.id)
 
