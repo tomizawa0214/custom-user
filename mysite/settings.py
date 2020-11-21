@@ -112,7 +112,7 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIALACCOUNT_PROVIDERS = {
     'line': {
-        'SCOPE': ['profile','openid'],
+        'SCOPE': ['profile','profile%20openid%20email'],
     }
 }
 
@@ -126,5 +126,8 @@ except ImportError:
 
 if not DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']
+    LINE_CHANNEL_SECRET = os.environ['LINE_CHANNEL_SECRET']
+    LINE_CHANNEL_ID = os.environ['LINE_CHANNEL_ID']
+    LINE_REDIRECT_URL = 'https://test-custom-user.herokuapp.com/accounts/line/login/'
     import django_heroku
-    django_heroku.settings(locals()) 
+    django_heroku.settings(locals())
