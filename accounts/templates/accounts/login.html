@@ -19,7 +19,7 @@
       </div>
     </form>
     <div class="card-body text-center pb-0">
-      <a class="card-title" href="{% url 'line_login' %}">LINEでログイン</a>
+      <a class="card-title" href="https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id={{ channel_id }}&redirect_uri={{ redirect_url }}&state={{ random_state }}&bot_prompt=aggressive&scope=profile%20openid%20email">LINEログイン</a>
     </div>
   </div>
 </div>
