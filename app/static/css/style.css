@@ -95,3 +95,34 @@ table {
 .form-control:focus {
   box-shadow: none;
 }
+
+.line-login {
+  color: #fff;
+  background-color: #00B900;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.line-login:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and ( max-width: 576px ) {
+  .card-auth {
+    width: 300px;
+  }
+
+  .card-profile {
+    width: 300px;
+  }
+
+  .profile_table .header {
+    width: 100%;
+    padding: 8px 12px;
+  }
+  
+  .profile_table .data {
+    padding: 8px 12px 16px 12px;
+  }
+}
